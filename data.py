@@ -1,19 +1,19 @@
-# Сидорова Кристина, 38-я когорта — Дипломный проект.Инженер по тестированию плюс
-
+# Тестовые данные
 headers = {
-    "Content-Type": "application/json",
+    "Content-Type": "application/json"
 }
 
 order_body = {
-        "firstName": "Naruto",
-        "lastName": "Uchiha",
-        "address": "Konoha, 142 apt.",
-        "metroStation": 204,
-        "phone": "+7 800 355 35 35",
-        "rentTime": 5,
-        "deliveryDate": "2024-04-24",
-        "comment": "Saske, come back to Konoha",
-        "color": ["BLACK"]
-    }
+    "firstName": "Иван",
+    "lastName": "Иванов",
+    "address": "Москва, ул. Ленина, 1",
+    "metroStation": 4,
+    "phone": "+79991112233",
+    "rentTime": 5,
+    "deliveryDate": "2024-12-31",
+    "comment": "Тестовый заказ",
+    "color": ["BLACK"]
+}
 
 status_code_200 = 200
+status_code_201 = 201

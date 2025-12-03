@@ -7,11 +7,16 @@
 
 запрос:
 
-          SELECT c.login, COUNT(o.id) AS "deliveryCount" 
-          FROM "Couriers" AS c 
-          LEFT JOIN "Orders" AS o ON c.id = o."courierId" 
-          WHERE o."inDelivery" = true 
-          GROUP BY c.login;
+         SELECT 
+    c.login,
+    COUNT(CASE WHEN o."inDelivery" = true THEN o.id END) AS "deliveryCount"
+FROM "Couriers" AS c 
+LEFT JOIN "Orders" AS o ON c.id = o."courierId"
+GROUP BY c.login;
+
+
+Left Join выбран потому что нам нужно показать ВСЕХ курьеров, включая тех, у кого есть активные доставки и у кого НЕТ активных доставок (deliveryCount = 0), а так же не потерять информацию о курьерах, которые сейчас свободны.
+Я поправила ошибку, перенесла условие o."inDelivery" = true в условие JOIN.
 
 Задание 2
 
